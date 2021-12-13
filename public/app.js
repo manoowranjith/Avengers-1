@@ -22,7 +22,7 @@ function initPlayers()
         }
 
         template.name=characters[i-1]
-        template.strength=number
+        // template.strength=number
         template.image="super"+i+".png"
         if(number%2==0)
         {
@@ -45,7 +45,7 @@ function initPlayers()
         }
 
         template.name=characters[i-1]
-        template.strength=number
+        // template.strength=number
         template.image="super"+i+".png"
         if(number%2==0)
         {
@@ -61,8 +61,16 @@ function initPlayers()
 // console.log(character_obj[1].image)
 getRandomStrength(character_obj)
 
-
 function getRandomStrength(character_obj)
+{
+    for(let i=0;i<20;i++)
+    {
+        var number=Math.ceil(Math.random()*100)
+        character_obj[i].strength=number
+    }
+}
+buildPlayers(character_obj)
+function buildPlayers(character_obj)
 {
     const lucas=document.getElementById('lucas-characters')
     const dustin=document.getElementById('dustin-characters')
